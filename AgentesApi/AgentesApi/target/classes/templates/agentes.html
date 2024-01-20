@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agentes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1F1F23;
+            color: #FFFFFF;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #FF0000; /* Cambiado a rojo (#FF0000) */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #2C2C33;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #2C2C33;
+            color: #FF0000; /* Cambiado a rojo (#FF0000) */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #2C2C33;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #1F1F23;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Agentes</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody th:each="agente : ${agentes.agents}">
+    <tr>
+        <td th:text="${agente.id}"></td>
+        <td th:text="${agente.title}"></td>
+        <td th:text="${agente.description}"></td>
+        <td th:text="${agente.role}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
